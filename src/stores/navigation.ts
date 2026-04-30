@@ -12,21 +12,35 @@ export type ModalId =
   | "invest-hospitality"
   | "invest-fnb"
   | "dashboard-roi"
-  // Ekosistem
+  // Ekosistem MESITA
   | "gabung-anggota"
   | "dompet-digital"
   | "marketplace-b2b"
-  // Sertifikasi
+  | "kenapa-koperasi"
+  | "kenapa-ai"
+  | "kenapa-blockchain"
+  | "kenapa-metaverse"
+  | "kenapa-nft"
+  | "kenapa-carbon"
+  // Sertifikasi & Akademi
   | "chse-halal"
   | "perijinan"
   | "bintang-5"
-  // Media
+  | "akademi-sertifikasi"
+  | "akademi-scaleup"
+  | "akademi-skill"
+  | "akademi-perusahaan"
+  // Media & Kontak
   | "laporan-tahunan"
   | "esg-karbon"
   | "pusat-media"
-  // Kontak
   | "bantuan-247"
   | "kemitraan"
+  // Pimpinan
+  | "dpp-mesita"
+  | "dpw-mesita"
+  | "dpc-mesita"
+  | "pac-mesita"
   // Destinasi Detail
   | "destinasi-detail"
   // CTA dari hero
@@ -41,23 +55,6 @@ export type ModalId =
   | "nusago-arvr"
   | "nusago-nft"
   | "nusago-investasi"
-  // Mengapa MESITA
-  | "kenapa-koperasi"
-  | "kenapa-ai"
-  | "kenapa-blockchain"
-  | "kenapa-metaverse"
-  | "kenapa-nft"
-  | "kenapa-carbon"
-  // Akademi Peradaban
-  | "akademi-sertifikasi"
-  | "akademi-scaleup"
-  | "akademi-skill"
-  | "akademi-perusahaan"
-  // Pimpinan
-  | "dpp-mesita"
-  | "dpw-mesita"
-  | "dpc-mesita"
-  | "pac-mesita"
   // Lainnya
   | "semua-berita"
   | "laporan-lengkap"

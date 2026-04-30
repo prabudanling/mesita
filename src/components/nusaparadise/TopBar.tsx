@@ -19,7 +19,100 @@ import {
 } from "@/components/ui/sheet";
 
 // ============================================================
-// Desktop Mega Menu Item (hover-triggered)
+// Framer Motion Variants — Premium Stagger
+// ============================================================
+
+/** Container variant: stagger children on mount */
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.06,
+      delayChildren: 0.08,
+    },
+  },
+  exit: {
+    opacity: 0,
+    transition: { staggerChildren: 0.03, staggerDirection: -1 },
+  },
+};
+
+/** Individual sub-item variant for mega menu grid */
+const staggerItem = {
+  hidden: { opacity: 0, y: 12, scale: 0.97 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.35, ease: [0.23, 1, 0.32, 1] },
+  },
+  exit: {
+    opacity: 0,
+    y: 6,
+    scale: 0.98,
+    transition: { duration: 0.2 },
+  },
+};
+
+/** Mobile drawer menu items stagger */
+const mobileMenuStagger = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.05, delayChildren: 0.1 },
+  },
+  exit: {
+    opacity: 0,
+    transition: { staggerChildren: 0.03, staggerDirection: -1 },
+  },
+};
+
+/** Individual mobile menu item */
+const mobileMenuItem = {
+  hidden: { opacity: 0, x: 20 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.3, ease: [0.23, 1, 0.32, 1] },
+  },
+  exit: {
+    opacity: 0,
+    x: 10,
+    transition: { duration: 0.15 },
+  },
+};
+
+/** Mobile sub-items stagger */
+const mobileSubStagger = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.04, delayChildren: 0.05 },
+  },
+  exit: {
+    opacity: 0,
+    transition: { staggerChildren: 0.02, staggerDirection: -1 },
+  },
+};
+
+/** Individual mobile sub-item */
+const mobileSubItem = {
+  hidden: { opacity: 0, x: 12 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.25, ease: [0.23, 1, 0.32, 1] },
+  },
+  exit: {
+    opacity: 0,
+    x: 8,
+    transition: { duration: 0.12 },
+  },
+};
+
+// ============================================================
+// Desktop Mega Menu Item (hover-triggered) — Premium
 // ============================================================
 function MegaMenuItem({
   menu,
@@ -54,7 +147,7 @@ function MegaMenuItem({
         )}
       >
         <Icon className="size-3.5" />
-        <span>{menu.label}</span>
+        <span className="premium-underline">{menu.label}</span>
         <ChevronDown
           className={cn(
             "size-3 transition-transform duration-200",
@@ -67,7 +160,7 @@ function MegaMenuItem({
 }
 
 // ============================================================
-// Desktop Mega Menu Panel (dropdown)
+// Desktop Mega Menu Panel (dropdown) — Premium + Stagger
 // ============================================================
 function MegaMenuPanel({
   menu,
@@ -84,7 +177,7 @@ function MegaMenuPanel({
       transition={{ duration: 0.2 }}
       className="absolute top-full left-0 right-0 z-50 pt-2"
     >
-      <div className="bg-white border border-slate-200 rounded-2xl shadow-2xl shadow-slate-200/50 overflow-hidden">
+      <div className="premium-shimmer bg-white border border-slate-200 rounded-2xl shadow-2xl shadow-slate-200/50 overflow-hidden">
         <div className="max-w-[1440px] mx-auto p-6 sm:p-8">
           {/* Header */}
           <div className="flex items-center gap-3 mb-5">
@@ -97,13 +190,20 @@ function MegaMenuPanel({
             </div>
           </div>
 
-          {/* Sub-items Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          {/* Sub-items Grid — Stagger Animated */}
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3"
+          >
             {menu.subItems.map((sub) => {
               const SubIcon = sub.icon;
               return (
-                <button
+                <motion.button
                   key={sub.id}
+                  variants={staggerItem}
                   onClick={() => onSubItemClick(sub.id)}
                   className="group flex items-start gap-3 p-4 rounded-xl border border-slate-100 bg-white hover:bg-blue-50/50 hover:border-blue-200 transition-all duration-200 text-left"
                 >
@@ -126,10 +226,10 @@ function MegaMenuPanel({
                     </p>
                   </div>
                   <ChevronRight className="size-3.5 text-slate-300 group-hover:text-blue-400 shrink-0 mt-2 transition-colors" />
-                </button>
+                </motion.button>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </div>
     </motion.div>
@@ -137,7 +237,7 @@ function MegaMenuPanel({
 }
 
 // ============================================================
-// Mobile Drawer (Sheet + Accordion-style)
+// Mobile Drawer (Sheet + Accordion-style) — Premium Stagger
 // ============================================================
 function MobileDrawer({
   open,
@@ -162,15 +262,22 @@ function MobileDrawer({
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
-      <SheetContent side="right" className="w-[85vw] max-w-md p-0 overflow-y-auto">
+      <SheetContent
+        side="right"
+        className="w-[85vw] max-w-md p-0 overflow-y-auto"
+      >
+        {/* Header */}
         <SheetHeader className="p-5 pb-3 border-b border-slate-100">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
+            <div className="glow-ring w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
               <span className="text-white font-bold text-[10px]">NP</span>
             </div>
             <div>
               <SheetTitle className="text-sm font-bold text-slate-900">
-                NusaParadise<span className="text-blue-600">.id</span>
+                NusaParadise
+                <span className="animate-gradient bg-gradient-to-r from-cyan-500 via-blue-400 to-cyan-500 bg-clip-text text-transparent">
+                  .id
+                </span>
               </SheetTitle>
               <SheetDescription className="text-[10px]">
                 Portal Wisata Peradaban Terbesar
@@ -179,88 +286,125 @@ function MobileDrawer({
           </div>
         </SheetHeader>
 
-        <div className="p-3">
-          {MENU_UTAMA.map((menu) => {
-            const Icon = menu.icon;
-            const isExpanded = expandedId === menu.id;
+        {/* Menu List — Staggered */}
+        <AnimatePresence mode="wait">
+          {open && (
+            <motion.div
+              key="mobile-menu-list"
+              variants={mobileMenuStagger}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              className="p-3"
+            >
+              {MENU_UTAMA.map((menu) => {
+                const Icon = menu.icon;
+                const isExpanded = expandedId === menu.id;
 
-            return (
-              <div key={menu.id} className="border-b border-slate-50 last:border-0">
-                <button
-                  onClick={() =>
-                    setExpandedId(isExpanded ? null : menu.id)
-                  }
-                  className="w-full flex items-center gap-3 px-3 py-3.5 text-left hover:bg-blue-50/50 rounded-xl transition-colors"
-                >
-                  <div className="w-8 h-8 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center shrink-0">
-                    <Icon className="size-3.5 text-blue-600" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <span className="text-[13px] font-semibold text-slate-800 block">
-                      {menu.label}
-                    </span>
-                    <span className="text-[10px] text-slate-400 line-clamp-1">
-                      {menu.description}
-                    </span>
-                  </div>
-                  <ChevronDown
-                    className={cn(
-                      "size-3.5 text-slate-400 shrink-0 transition-transform duration-200",
-                      isExpanded && "rotate-180"
-                    )}
-                  />
-                </button>
-
-                <AnimatePresence>
-                  {isExpanded && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                      className="overflow-hidden"
+                return (
+                  <motion.div
+                    key={menu.id}
+                    variants={mobileMenuItem}
+                    className="border-b border-slate-50 last:border-0"
+                  >
+                    <button
+                      onClick={() =>
+                        setExpandedId(isExpanded ? null : menu.id)
+                      }
+                      className="w-full flex items-center gap-3 px-3 py-3.5 text-left hover:bg-blue-50/50 rounded-xl transition-colors"
                     >
-                      <div className="pl-6 pr-2 pb-3 space-y-1.5">
-                        {menu.subItems.map((sub) => {
-                          const SubIcon = sub.icon;
-                          return (
-                            <button
-                              key={sub.id}
-                              onClick={() => handleSubItemClick(sub.id)}
-                              className="w-full flex items-center gap-2.5 p-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left group"
-                            >
-                              <SubIcon className="size-3.5 text-slate-400 group-hover:text-blue-500 shrink-0" />
-                              <div className="flex-1 min-w-0">
-                                <div className="flex items-center gap-1.5">
-                                  <span className="text-[12px] font-medium text-slate-700 group-hover:text-blue-600 truncate">
-                                    {sub.label}
-                                  </span>
-                                  {sub.badge && (
-                                    <span className="shrink-0 text-[8px] font-bold text-blue-600 bg-blue-50 px-1 py-0.5 rounded-full uppercase">
-                                      {sub.badge}
-                                    </span>
-                                  )}
-                                </div>
-                              </div>
-                              <ChevronRight className="size-3 text-slate-300 group-hover:text-blue-400 shrink-0" />
-                            </button>
-                          );
-                        })}
+                      <div className="w-8 h-8 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center shrink-0">
+                        <Icon className="size-3.5 text-blue-600" />
                       </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            );
-          })}
-        </div>
+                      <div className="flex-1 min-w-0">
+                        <span className="text-[13px] font-semibold text-slate-800 block premium-underline">
+                          {menu.label}
+                        </span>
+                        <span className="text-[10px] text-slate-400 line-clamp-1">
+                          {menu.description}
+                        </span>
+                      </div>
+                      <ChevronDown
+                        className={cn(
+                          "size-3.5 text-slate-400 shrink-0 transition-transform duration-300 ease-[cubic-bezier(0.23,1,0.32,1)]",
+                          isExpanded && "rotate-180"
+                        )}
+                      />
+                    </button>
+
+                    {/* Expanded Sub-items — Staggered */}
+                    <AnimatePresence>
+                      {isExpanded && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{
+                            height: "auto",
+                            opacity: 1,
+                            transition: {
+                              height: { duration: 0.35, ease: [0.23, 1, 0.32, 1] },
+                              opacity: { duration: 0.25, delay: 0.05 },
+                            },
+                          }}
+                          exit={{
+                            height: 0,
+                            opacity: 0,
+                            transition: {
+                              height: { duration: 0.25, ease: [0.23, 1, 0.32, 1] },
+                              opacity: { duration: 0.15 },
+                            },
+                          }}
+                          className="overflow-hidden"
+                        >
+                          <motion.div
+                            variants={mobileSubStagger}
+                            initial="hidden"
+                            animate="visible"
+                            exit="exit"
+                            className="pl-6 pr-2 pb-3 space-y-1.5"
+                          >
+                            {menu.subItems.map((sub) => {
+                              const SubIcon = sub.icon;
+                              return (
+                                <motion.button
+                                  key={sub.id}
+                                  variants={mobileSubItem}
+                                  onClick={() => handleSubItemClick(sub.id)}
+                                  className="w-full flex items-center gap-2.5 p-2.5 rounded-lg hover:bg-blue-50 transition-colors text-left group"
+                                >
+                                  <SubIcon className="size-3.5 text-slate-400 group-hover:text-blue-500 shrink-0" />
+                                  <div className="flex-1 min-w-0">
+                                    <div className="flex items-center gap-1.5">
+                                      <span className="text-[12px] font-medium text-slate-700 group-hover:text-blue-600 truncate">
+                                        {sub.label}
+                                      </span>
+                                      {sub.badge && (
+                                        <span className="shrink-0 text-[8px] font-bold text-blue-600 bg-blue-50 px-1 py-0.5 rounded-full uppercase">
+                                          {sub.badge}
+                                        </span>
+                                      )}
+                                    </div>
+                                  </div>
+                                  <ChevronRight className="size-3 text-slate-300 group-hover:text-blue-400 shrink-0" />
+                                </motion.button>
+                              );
+                            })}
+                          </motion.div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
+                );
+              })}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </SheetContent>
     </Sheet>
   );
 }
 
 // ============================================================
-// TopBar — Main Export
+// TopBar — Main Export (Premium Enhanced)
 // ============================================================
 export default function TopBar({ onNavigate }: { onNavigate?: (menuId: string) => void }) {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
@@ -330,14 +474,27 @@ export default function TopBar({ onNavigate }: { onNavigate?: (menuId: string) =
         )} />
         <div className="relative max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between gap-4 py-3">
-              {/* Logo */}
+              {/* Logo — with glow-ring & gradient .id */}
               <div className="flex items-center gap-2.5 shrink-0">
-                <div className={cn("w-9 h-9 rounded-lg flex items-center justify-center shadow-lg transition-all duration-500", isOverVideo ? "bg-gradient-to-br from-cyan-400 to-blue-500 shadow-cyan-500/30" : "bg-white/25 shadow-blue-400/30")}>
+                <div className={cn(
+                  "glow-ring w-9 h-9 rounded-lg flex items-center justify-center shadow-lg transition-all duration-500",
+                  isOverVideo
+                    ? "bg-gradient-to-br from-cyan-400 to-blue-500 shadow-cyan-500/30"
+                    : "bg-white/25 shadow-blue-400/30"
+                )}>
                   <span className="text-white font-bold text-sm">NP</span>
                 </div>
                 <div className="flex flex-col">
                   <span className="text-sm sm:text-base font-bold tracking-tight text-white">
-                    NusaParadise<span className={cn("transition-colors duration-500", isOverVideo ? "text-cyan-300" : "text-cyan-200")}>.id</span>
+                    NusaParadise
+                    <span className={cn(
+                      "animate-gradient bg-clip-text text-transparent bg-[length:200%_200%] transition-all duration-500",
+                      isOverVideo
+                        ? "bg-gradient-to-r from-cyan-300 via-sky-200 to-cyan-300"
+                        : "bg-gradient-to-r from-cyan-200 via-white to-cyan-200"
+                    )}>
+                      .id
+                    </span>
                   </span>
                   <span className={cn(
                     "text-[10px] hidden sm:block leading-tight transition-colors duration-500",
@@ -368,12 +525,15 @@ export default function TopBar({ onNavigate }: { onNavigate?: (menuId: string) =
 
               {/* CTA + Mobile Toggle */}
               <div className="flex items-center gap-2 shrink-0">
-                <button onClick={() => openModal("gabung-ekosistem-cta")} className={cn(
-                  "hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold transition-all duration-300 shadow-sm",
-                  isOverVideo
-                    ? "bg-cyan-500 text-white hover:bg-cyan-400 shadow-cyan-500/30 hover:shadow-cyan-400/40"
-                    : "bg-cyan-400 text-blue-900 hover:bg-cyan-300 shadow-cyan-500/20 font-bold"
-                )}>
+                <button
+                  onClick={() => openModal("gabung-ekosistem-cta")}
+                  className={cn(
+                    "premium-btn hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-semibold transition-all duration-300 shadow-sm",
+                    isOverVideo
+                      ? "bg-cyan-500 text-white hover:bg-cyan-400 shadow-cyan-500/30 hover:shadow-cyan-400/40"
+                      : "bg-cyan-400 text-blue-900 hover:bg-cyan-300 shadow-cyan-500/20 font-bold"
+                  )}
+                >
                   <span>Gabung Ekosistem</span>
                 </button>
                 <button
@@ -392,7 +552,7 @@ export default function TopBar({ onNavigate }: { onNavigate?: (menuId: string) =
             </div>
         </div>
 
-        {/* Mega Menu Dropdown Panel */}
+        {/* Mega Menu Dropdown Panel — with premium-shimmer & stagger */}
         <AnimatePresence>
           {activeMenuData && (
             <div
@@ -408,7 +568,7 @@ export default function TopBar({ onNavigate }: { onNavigate?: (menuId: string) =
         </AnimatePresence>
       </header>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer — Premium stagger transitions */}
       <MobileDrawer
         open={mobileOpen}
         onOpenChange={setMobileOpen}
