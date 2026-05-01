@@ -1,6 +1,6 @@
 // ============================================================
 // NusaParadise.id — Sitemap & Menu Configuration
-// SPECTRUM8: Consolidated 10 → 6 Premium Menu
+// SPECTRUM8: Consolidated 10 → 7 Premium Menu
 // ============================================================
 
 import {
@@ -18,12 +18,10 @@ import {
   ShoppingCart,
   UserPlus,
   Award,
-  FileCheck,
   Star,
   Leaf,
   Newspaper,
   Headphones,
-  Briefcase,
   Rocket,
   BrainCircuit,
   QrCode,
@@ -31,13 +29,10 @@ import {
   Gem,
   Landmark,
   Crown,
-  Lock,
   Globe,
-  Building2,
   MapPin,
   Network,
   Shield,
-  Sparkles,
   Handshake,
   type LucideIcon,
 } from "lucide-react";
@@ -62,7 +57,7 @@ export interface MenuUtama {
 }
 
 // ============================================================
-// DATA 6 MENU UTAMA (CONSOLIDATED)
+// DATA 7 MENU UTAMA (CONSOLIDATED)
 // ============================================================
 
 export const MENU_UTAMA: MenuUtama[] = [
@@ -161,12 +156,12 @@ export const MENU_UTAMA: MenuUtama[] = [
   },
 
   // ----------------------------------------------------------
-  // 3. EKOSISTEM MESITA (MERGED: Ekosistem + Mengapa MESITA + Pimpinan)
+  // 3. EKOSISTEM MESITA (MERGED: Ekosistem + Mengapa MESITA)
   // ----------------------------------------------------------
   {
     id: "ekosistem-mesita",
     label: "Ekosistem MESITA",
-    description: "Federasi pariwisata Nusantara — keanggotaan, keunggulan digital, dan struktur organisasi",
+    description: "Federasi pariwisata Nusantara — keanggotaan, keunggulan digital, dan koperasi digital",
     icon: Shield,
     accentColor: "blue",
     subItems: [
@@ -197,18 +192,52 @@ export const MENU_UTAMA: MenuUtama[] = [
         description: "Hubungkan hotel dengan petani, supplier desa — rantai pasok berdaulat",
         icon: ShoppingCart,
       },
+    ],
+  },
+
+  // ----------------------------------------------------------
+  // 4. PIMPINAN (Struktur Organisasi — promoted to main menu)
+  // ----------------------------------------------------------
+  {
+    id: "pimpinan",
+    label: "Pimpinan",
+    description: "Struktur organisasi dari pusat hingga akar rumput — DPP, DPW, DPC, PAC 38 provinsi",
+    icon: Crown,
+    accentColor: "amber",
+    subItems: [
       {
         id: "dpp-mesita",
-        label: "Struktur Organisasi",
-        description: "DPP → DPW → DPC → PAC — dari pusat hingga akar rumput di 38 provinsi",
-        icon: Building2,
+        label: "DPP — Dewan Pimpinan Pusat",
+        description: "Pucuk komando strategis nasional — Ketua Umum, Sekjen, Bendahara & 10 Bidang",
+        icon: Landmark,
+        badge: "Nasional",
+      },
+      {
+        id: "dpw-mesita",
+        label: "DPW — Dewan Pimpinan Wilayah",
+        description: "Koordinasi tingkat provinsi — 38 DPW dari Sabang hingga Merauke",
+        icon: MapPin,
         badge: "38 Provinsi",
+      },
+      {
+        id: "dpc-mesita",
+        label: "DPC — Dewan Pimpinan Cabang",
+        description: "Eksekutor lapangan — 514 Kabupaten/Kota seluruh Indonesia",
+        icon: Network,
+        badge: "514 Kab/Kota",
+      },
+      {
+        id: "pac-mesita",
+        label: "PAC — Pengurus Anak Cabang",
+        description: "Basis gerak massal akar rumput — 7,234+ Kecamatan & Desa",
+        icon: Users,
+        badge: "7,234+",
       },
     ],
   },
 
   // ----------------------------------------------------------
-  // 4. KAMPUNG MODAL (INVESTASI — unchanged)
+  // 5. KAMPUNG MODAL (INVESTASI — unchanged)
   // ----------------------------------------------------------
   {
     id: "investasi",
@@ -247,7 +276,7 @@ export const MENU_UTAMA: MenuUtama[] = [
   },
 
   // ----------------------------------------------------------
-  // 5. AKADEMI & SERTIFIKASI (MERGED: Sertifikasi + Akademi)
+  // 6. AKADEMI & SERTIFIKASI (MERGED: Sertifikasi + Akademi)
   // ----------------------------------------------------------
   {
     id: "akademi-sertifikasi",
@@ -295,7 +324,7 @@ export const MENU_UTAMA: MenuUtama[] = [
   },
 
   // ----------------------------------------------------------
-  // 6. MEDIA & KONTAK (MERGED: Media + Kontak)
+  // 7. MEDIA & KONTAK (MERGED: Media + Kontak)
   // ----------------------------------------------------------
   {
     id: "media-kontak",
