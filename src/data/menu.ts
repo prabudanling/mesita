@@ -237,11 +237,11 @@ export const MENU_UTAMA: MenuUtama[] = [
   },
 
   // ----------------------------------------------------------
-  // 5. MODAL PERADABAN (INVESTASI)
+  // 5. INVESTASI WISATA
   // ----------------------------------------------------------
   {
     id: "investasi",
-    label: "Modal Peradaban",
+    label: "Investasi Wisata",
     description: "Integrasi KPA-5 — pendanaan & investasi langsung di destinasi wisata Indonesia",
     icon: TrendingUp,
     accentColor: "emerald",
