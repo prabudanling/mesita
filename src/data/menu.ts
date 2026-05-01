@@ -237,12 +237,12 @@ export const MENU_UTAMA: MenuUtama[] = [
   },
 
   // ----------------------------------------------------------
-  // 5. KAMPUNG MODAL (INVESTASI — unchanged)
+  // 5. MODAL PERADABAN (INVESTASI)
   // ----------------------------------------------------------
   {
     id: "investasi",
-    label: "Kampung Modal",
-    description: "Integrasi KPA-5 — investasi langsung di destinasi wisata Indonesia",
+    label: "Modal Peradaban",
+    description: "Integrasi KPA-5 — pendanaan & investasi langsung di destinasi wisata Indonesia",
     icon: TrendingUp,
     accentColor: "emerald",
     subItems: [

@@ -65,7 +65,7 @@ function Footer() {
                 { label: "Destinasi Syurga", id: "wisata" },
                 { label: "NusaGo Digital", id: "nusago" },
                 { label: "Ekosistem MESITA", id: "ekosistem-mesita" },
-                { label: "Kampung Modal", id: "investasi" },
+                { label: "Modal Peradaban", id: "investasi" },
                 { label: "Akademi & Sertifikasi", id: "akademi-sertifikasi" },
                 { label: "Media & Kontak", id: "media-kontak" },
               ].map((item) => (
@@ -227,7 +227,7 @@ export default function Home() {
 
         <SectionDivider className="my-0" />
 
-        {/* INVESTASI — Kampung Modal */}
+        {/* INVESTASI — Modal Peradaban */}
         <div className="relative">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="aurora-blob absolute -top-20 right-[10%] w-[500px] h-[500px] rounded-full bg-emerald-400/5" />
