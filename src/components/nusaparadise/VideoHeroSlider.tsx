@@ -77,7 +77,8 @@ const badgeVariants = {
 
 export default function VideoHeroSlider() {
   const embedUrl = `https://www.youtube.com/embed/${VIDEO_HERO.videoId}?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&fs=0&disablekb=1&playlist=${VIDEO_HERO.videoId}&loop=1&playsinline=1`;
-  const titleWords = splitWords(VIDEO_HERO.title);
+  const line1Words = splitWords(VIDEO_HERO.titleLine1);
+  const line2Words = splitWords(VIDEO_HERO.titleLine2);
 
   return (
     <section className="relative w-full h-[100vh] min-h-[500px] sm:min-h-[600px] overflow-hidden bg-black">
@@ -161,15 +162,32 @@ export default function VideoHeroSlider() {
               </motion.span>
             )}
 
-            {/* Title — word-by-word reveal with stagger */}
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white drop-shadow-lg leading-tight mb-2 sm:mb-3 [perspective:600px]">
+            {/* Title — two-line word-by-word reveal with stagger */}
+            <div className="mb-2 sm:mb-3 [perspective:600px]">
+              {/* Line 1 — smaller, elegant */}
+              <motion.p
+                variants={titleContainerVariants}
+                className="inline-flex flex-wrap text-base sm:text-lg lg:text-xl xl:text-2xl font-medium text-white/70 tracking-wide mb-1"
+              >
+                {line1Words.map((word, i) => (
+                  <motion.span
+                    key={`l1-${i}`}
+                    variants={wordVariants}
+                    className="inline-block mr-[0.3em]"
+                  >
+                    {word}
+                  </motion.span>
+                ))}
+              </motion.p>
+              <br />
+              {/* Line 2 — bold, impactful */}
               <motion.span
                 variants={titleContainerVariants}
-                className="inline-flex flex-wrap"
+                className="inline-flex flex-wrap text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-white drop-shadow-lg leading-tight"
               >
-                {titleWords.map((word, i) => (
+                {line2Words.map((word, i) => (
                   <motion.span
-                    key={i}
+                    key={`l2-${i}`}
                     variants={wordVariants}
                     className="inline-block mr-[0.3em]"
                   >
@@ -177,7 +195,7 @@ export default function VideoHeroSlider() {
                   </motion.span>
                 ))}
               </motion.span>
-            </h2>
+            </div>
 
             {/* Subtitle — blur dissolve reveal */}
             <motion.p

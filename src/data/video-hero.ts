@@ -7,8 +7,10 @@
 export interface VideoHeroConfig {
   /** YouTube Video ID */
   videoId: string;
-  /** Judul yang tampil di overlay */
-  title: string;
+  /** Judul baris pertama (kecil) */
+  titleLine1: string;
+  /** Judul baris kedua (besar) */
+  titleLine2: string;
   /** Subjudul */
   subtitle: string;
   /** Badge lokasi */
@@ -21,7 +23,8 @@ export interface VideoHeroConfig {
 
 export const VIDEO_HERO: VideoHeroConfig = {
   videoId: "8YBMRQAa6RE",
-  title: "Indonesia True Paradise In The World",
+  titleLine1: "Welcome to Indonesia",
+  titleLine2: "TRUE PARADISE IN THE WORLD",
   subtitle: "17.504 pulau • 714 suku bangsa • surga dunia yang nyata dari Sabang sampai Merauke",
   locationBadge: "Nusantara",
 };

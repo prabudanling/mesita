@@ -62,7 +62,7 @@ export interface MenuUtama {
 
 export const MENU_UTAMA: MenuUtama[] = [
   // ----------------------------------------------------------
-  // 1. EKSPLORASI WISATA SYURGA (CORE — unchanged)
+  // 1. DESTINASI SYURGA
   // ----------------------------------------------------------
   {
     id: "wisata",
@@ -101,7 +101,48 @@ export const MENU_UTAMA: MenuUtama[] = [
   },
 
   // ----------------------------------------------------------
-  // 2. NUSAGO PLATFORM (TECH — unchanged)
+  // 2. PIMPINAN (Struktur Organisasi)
+  // ----------------------------------------------------------
+  {
+    id: "pimpinan",
+    label: "Pimpinan",
+    description: "Struktur organisasi dari pusat hingga akar rumput — DPP, DPW, DPC, PAC 38 provinsi",
+    icon: Crown,
+    accentColor: "amber",
+    subItems: [
+      {
+        id: "dpp-mesita",
+        label: "DPP — Dewan Pimpinan Pusat",
+        description: "Pucuk komando strategis nasional — Ketua Umum, Sekjen, Bendahara & 10 Bidang",
+        icon: Landmark,
+        badge: "Nasional",
+      },
+      {
+        id: "dpw-mesita",
+        label: "DPW — Dewan Pimpinan Wilayah",
+        description: "Koordinasi tingkat provinsi — 38 DPW dari Sabang hingga Merauke",
+        icon: MapPin,
+        badge: "38 Provinsi",
+      },
+      {
+        id: "dpc-mesita",
+        label: "DPC — Dewan Pimpinan Cabang",
+        description: "Eksekutor lapangan — 514 Kabupaten/Kota seluruh Indonesia",
+        icon: Network,
+        badge: "514 Kab/Kota",
+      },
+      {
+        id: "pac-mesita",
+        label: "PAC — Pengurus Anak Cabang",
+        description: "Basis gerak massal akar rumput — 7,234+ Kecamatan & Desa",
+        icon: Users,
+        badge: "7,234+",
+      },
+    ],
+  },
+
+  // ----------------------------------------------------------
+  // 3. NUSAGO DIGITAL
   // ----------------------------------------------------------
   {
     id: "nusago",
@@ -156,7 +197,7 @@ export const MENU_UTAMA: MenuUtama[] = [
   },
 
   // ----------------------------------------------------------
-  // 3. EKOSISTEM MESITA (MERGED: Ekosistem + Mengapa MESITA)
+  // 4. EKOSISTEM MESITA
   // ----------------------------------------------------------
   {
     id: "ekosistem-mesita",
@@ -191,47 +232,6 @@ export const MENU_UTAMA: MenuUtama[] = [
         label: "Marketplace Rantai Pasok B2B",
         description: "Hubungkan hotel dengan petani, supplier desa — rantai pasok berdaulat",
         icon: ShoppingCart,
-      },
-    ],
-  },
-
-  // ----------------------------------------------------------
-  // 4. PIMPINAN (Struktur Organisasi — promoted to main menu)
-  // ----------------------------------------------------------
-  {
-    id: "pimpinan",
-    label: "Pimpinan",
-    description: "Struktur organisasi dari pusat hingga akar rumput — DPP, DPW, DPC, PAC 38 provinsi",
-    icon: Crown,
-    accentColor: "amber",
-    subItems: [
-      {
-        id: "dpp-mesita",
-        label: "DPP — Dewan Pimpinan Pusat",
-        description: "Pucuk komando strategis nasional — Ketua Umum, Sekjen, Bendahara & 10 Bidang",
-        icon: Landmark,
-        badge: "Nasional",
-      },
-      {
-        id: "dpw-mesita",
-        label: "DPW — Dewan Pimpinan Wilayah",
-        description: "Koordinasi tingkat provinsi — 38 DPW dari Sabang hingga Merauke",
-        icon: MapPin,
-        badge: "38 Provinsi",
-      },
-      {
-        id: "dpc-mesita",
-        label: "DPC — Dewan Pimpinan Cabang",
-        description: "Eksekutor lapangan — 514 Kabupaten/Kota seluruh Indonesia",
-        icon: Network,
-        badge: "514 Kab/Kota",
-      },
-      {
-        id: "pac-mesita",
-        label: "PAC — Pengurus Anak Cabang",
-        description: "Basis gerak massal akar rumput — 7,234+ Kecamatan & Desa",
-        icon: Users,
-        badge: "7,234+",
       },
     ],
   },
@@ -276,7 +276,7 @@ export const MENU_UTAMA: MenuUtama[] = [
   },
 
   // ----------------------------------------------------------
-  // 6. AKADEMI & SERTIFIKASI (MERGED: Sertifikasi + Akademi)
+  // 6. AKADEMI & SERTIFIKASI
   // ----------------------------------------------------------
   {
     id: "akademi-sertifikasi",
@@ -324,7 +324,7 @@ export const MENU_UTAMA: MenuUtama[] = [
   },
 
   // ----------------------------------------------------------
-  // 7. MEDIA & KONTAK (MERGED: Media + Kontak)
+  // 7. MEDIA & KONTAK
   // ----------------------------------------------------------
   {
     id: "media-kontak",

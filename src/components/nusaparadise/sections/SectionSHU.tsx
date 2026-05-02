@@ -150,7 +150,7 @@ export default function SectionSHU() {
             <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 counter-active" />
           </div>
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-white mb-2">
-            Kedaulatan Ekonomi Desa Wisata
+            Wisata Syurga Sebenarnya Terbaik di Dunia
           </h2>
           <p className="text-sm text-slate-400 max-w-2xl mx-auto">
             Transparansi real-time SHU (Sisa Hasil Usaha) dari seluruh desa wisata yang terintegrasi dalam ekosistem MESITA

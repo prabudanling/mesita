@@ -63,6 +63,7 @@ function Footer() {
             <div className="flex flex-col gap-2">
               {[
                 { label: "Destinasi Syurga", id: "wisata" },
+                { label: "Pimpinan", id: "pimpinan" },
                 { label: "NusaGo Digital", id: "nusago" },
                 { label: "Ekosistem MESITA", id: "ekosistem-mesita" },
                 { label: "Investasi Wisata", id: "investasi" },
