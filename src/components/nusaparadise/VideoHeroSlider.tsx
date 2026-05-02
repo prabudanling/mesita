@@ -167,7 +167,7 @@ export default function VideoHeroSlider() {
               {/* Line 1 — smaller, elegant */}
               <motion.p
                 variants={titleContainerVariants}
-                className="inline-flex flex-wrap text-base sm:text-lg lg:text-xl xl:text-2xl font-medium text-white/70 tracking-wide mb-1"
+                className="inline-flex flex-wrap text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-semibold text-yellow-400 drop-shadow-[0_2px_8px_rgba(250,204,21,0.4)] tracking-wide mb-1"
               >
                 {line1Words.map((word, i) => (
                   <motion.span
