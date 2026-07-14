@@ -15,15 +15,15 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "MESITA — Masyarakat Ekosistem Wisata Nusantara | Portal Pariwisata Futuristik Indonesia",
-  description: "Ekosistem pariwisata futuristik Indonesia menuju Indonesia Tourism #1 Dunia 2045. 17.504 pulau, 714 suku bangsa, 9 pilar ekosistem, $100B target revenue.",
-  keywords: ["MESITA", "Pariwisata Indonesia", "Tourism of Civilization", "Desa Wisata", "NusaParadise", "KopNusa", "Ekosistem Pariwisata", "Indonesia Emas 2045", "Raja Ampat", "Borobudur", "Bali"],
+  description: "Ekosistem pariwisata futuristik Indonesia menuju Indonesia Tourism #1 Dunia 2030. 17.504 pulau, 714 suku bangsa, 9 pilar ekosistem, $100B target revenue.",
+  keywords: ["MESITA", "Pariwisata Indonesia", "Tourism of Civilization", "Desa Wisata", "NusaParadise", "KopNusa", "Ekosistem Pariwisata", "Indonesia Emas 2030", "Raja Ampat", "Borobudur", "Bali"],
   authors: [{ name: "MESITA - Masyarakat Ekosistem Wisata Nusantara" }],
   icons: {
     icon: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
   },
   openGraph: {
     title: "MESITA — Ekosistem Pariwisata Futuristik Indonesia",
-    description: "Transformasi pariwisata Indonesia dari komoditas menjadi ekosistem hidup menuju Indonesia Tourism #1 Dunia 2045",
+    description: "Transformasi pariwisata Indonesia dari komoditas menjadi ekosistem hidup menuju Indonesia Tourism #1 Dunia 2030",
     url: "https://mesita.id",
     siteName: "MESITA",
     type: "website",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "MESITA — Ekosistem Pariwisata Futuristik Indonesia",
-    description: "9 Pilar Ekosistem. $100B Revenue Target. Indonesia Emas 2045.",
+    description: "9 Pilar Ekosistem. $100B Revenue Target. Indonesia Emas 2030.",
   },
 };
 

@@ -276,7 +276,7 @@ function HeroSection() {
             variant="outline"
             className="border-mesita-gold/40 text-mesita-gold bg-mesita-gold/10 px-5 py-2 text-xs font-semibold tracking-[0.25em] uppercase"
           >
-            Grand Design · Indonesia 2025–2045
+            Grand Design · Indonesia 2025–2030
           </Badge>
         </motion.div>
 
@@ -309,7 +309,7 @@ function HeroSection() {
           Asosiasi induk yang mentransformasi pariwisata Indonesia dari komoditas menjadi 
           <span className="text-mesita-gold-light font-semibold"> ekosistem hidup</span> — menghubungkan 
           teknologi, budaya, alam, dan komunitas lokal dalam satu grand architecture menuju 
-          <span className="text-mesita-gold-light font-semibold"> Indonesia Tourism #1 Dunia 2045</span>.
+          <span className="text-mesita-gold-light font-semibold"> Indonesia Tourism #1 Dunia 2030</span>.
         </motion.p>
 
         {/* KPI Stats */}
@@ -556,11 +556,11 @@ function RoadmapSection() {
           className="text-center mb-16"
         >
           <Badge variant="outline" className="border-mesita-gold/40 text-mesita-gold bg-mesita-gold/10 mb-4">
-            Timeline 2025–2045
+            Timeline 2025–2030
           </Badge>
-          <h2 className="text-3xl md:text-5xl font-bold text-gold-gradient mb-4">Roadmap 2025–2045</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-gold-gradient mb-4">Roadmap 2025–2030</h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Tiga fase transformasi menuju Indonesia sebagai destinasi wisata nomor satu dunia
+            Empat fase transformasi menuju Indonesia sebagai destinasi wisata nomor satu dunia
           </p>
         </motion.div>
 
@@ -846,7 +846,7 @@ function GovernanceSection() {
 // ─── AI Chat Section ────────────────────────────────────────────────
 function AIChatSection() {
   const [messages, setMessages] = useState<{ role: "user" | "assistant"; content: string }[]>([
-    { role: "assistant", content: "Salam Nusantara! 🌏 Saya MESITA AI Concierge — asisten pintar ekosistem pariwisata Indonesia. Tanyakan apa saja tentang 9 pilar ekosistem, destinasi wisata, roadmap 2045, atau bagaimana Anda bisa berpartisipasi dalam transformasi pariwisata Indonesia!" }
+    { role: "assistant", content: "Salam Nusantara! 🌏 Saya MESITA AI Concierge — asisten pintar ekosistem pariwisata Indonesia. Tanyakan apa saja tentang 9 pilar ekosistem, destinasi wisata, roadmap 2030, atau bagaimana Anda bisa berpartisipasi dalam transformasi pariwisata Indonesia!" }
   ]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -1054,14 +1054,14 @@ function Footer() {
             </div>
             <p className="text-sm text-muted-foreground max-w-md leading-relaxed">
               Asosiasi induk yang mentransformasi pariwisata Indonesia dari komoditas menjadi ekosistem hidup — 
-              menghubungkan teknologi, budaya, alam, dan komunitas lokal menuju Indonesia Emas 2045.
+              menghubungkan teknologi, budaya, alam, dan komunitas lokal menuju Indonesia Emas 2030.
             </p>
           </div>
           <div>
             <h4 className="text-sm font-semibold text-mesita-gold-light mb-4">Ekosistem</h4>
             <div className="space-y-2 text-sm text-muted-foreground">
               <div>9 Pilar Utama</div>
-              <div>Roadmap 2025–2045</div>
+              <div>Roadmap 2025–2030</div>
               <div>Tech Stack</div>
               <div>Governance</div>
               <div>AI Concierge</div>
@@ -1080,7 +1080,7 @@ function Footer() {
         <Separator className="bg-mesita-gold/10 mb-6" />
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-sm text-muted-foreground">
-            <span className="text-mesita-gold font-semibold">MESITA</span> · Masyarakat Ekosistem Wisata Nusantara · Grand Design 2025–2045
+            <span className="text-mesita-gold font-semibold">MESITA</span> · Masyarakat Ekosistem Wisata Nusantara · Grand Design 2025–2030
           </div>
           <div className="text-xs text-muted-foreground/60">
             Indonesia Emas Tourism Blueprint · Built with 💛 for Nusantara

@@ -228,28 +228,28 @@ export const revenues = [
 
 export const roadmap = [
   {
-    year: "2025–2027",
+    year: "2025–2026",
     title: "Fase Fondasi — Bangun Ekosistem",
     desc: "Legalitas asosiasi, MoU pemerintah, rekrut 50 anggota pendiri, launch pilot 5 destinasi",
     items: ["Legalitas MESITA", "MoU Kemenparekraf", "Pilot 5 destinasi", "MESITA App v1", "50 anggota pendiri", "Sertifikasi pilot"],
     color: "#60A5FA"
   },
   {
-    year: "2027–2030",
+    year: "2026–2027",
     title: "Fase Akselerasi — Skalakan Sistem",
     desc: "100 desa wisata terstandarisasi, MESITA Token launch, partnership 50 hotel chain internasional",
     items: ["100 Desa Wisata OS", "MESITA Token Launch", "50 Hotel Chain MoU", "Data Platform v1", "Village Bond Pilot", "MICE Hub Bali+IKN"],
     color: "#2DD4BF"
   },
   {
-    year: "2030–2035",
+    year: "2027–2029",
     title: "Fase Ekspansi — Masuk Radar Dunia",
     desc: "Indonesia masuk top 5 destinasi Asia, MESITA diakui UNWTO, 500 desa wisata aktif",
     items: ["Top 5 Asia Tourism", "UNWTO Recognition", "500 Desa Aktif", "Carbon Credit Exchange", "Digital Heritage Global", "$10B Revenue Target"],
     color: "#FCD34D"
   },
   {
-    year: "2035–2045",
+    year: "2029–2030",
     title: "Fase Dominasi — #1 Tourism World",
     desc: "Indonesia #1 destinasi wisata dunia berdasarkan pengalaman, keberlanjutan, dan ekonomi komunitas",
     items: ["#1 World Destination", "$100B Annual Revenue", "5M Jobs Created", "Net-Zero Tourism", "Global MESITA Standard", "Indonesia Tourism IP Global"],
@@ -341,7 +341,7 @@ export const governance = [
 ];
 
 export const kpiStats = [
-  { value: "$100B", label: "Target Revenue 2045", suffix: "" },
+  { value: "$100B", label: "Target Revenue 2030", suffix: "" },
   { value: "500+", label: "Ekosistem Desa Wisata", suffix: "" },
   { value: "9", label: "Pilar Utama Ekosistem", suffix: "" },
   { value: "17.504", label: "Pulau Nusantara", suffix: "" },
